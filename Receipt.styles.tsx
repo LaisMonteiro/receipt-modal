@@ -46,24 +46,6 @@ export const StyledLedgerBase = styled.div`
     padding-bottom: 3rem;
 `;
 
-export const StyledReceiptBase = styled.div`
-    width: 100%;
-    border-top: 1px solid #e6e6e6;
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
-    background-color: white;
-    z-index: 3;
-    padding: 1rem;
-    margin: -1rem 0rem;
-    padding-bottom: 2rem;
-`;
-
-export const StyledDataReceiptWrapper = styled.div`
-    box-shadow: 0px 0px 85px -70px #000, inset 0 66px 15px 0px #ccc, inset 0 99px 5px 0px #fff;
-    margin: 0 1rem;
-    z-index: 2;
-`;
-
 export const StyledMiniButton = styled.div`
     width: 8px;
     height: 3px;

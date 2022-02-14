@@ -7,16 +7,14 @@ import closeIcon from '@public/images/icons/close-icon.svg';
 // STYLES
 import {
     StyledContentWrapper,
-    StyledDataReceiptWrapper,
     StyledDownloadReceiptButton,
     StyledFirstBase,
     StyledGradientDiv,
     StyledLedgerBase,
     StyledMiniButton,
-    StyledReceiptBase,
     StyledSecondBase,
     StyledShadow,
-} from './Receipt.styles';
+} from './ReceiptModal.styles';
 
 // RECEIPT MODAL UTILS
 interface IReceiptModalProps {
@@ -32,8 +30,8 @@ const ReceiptModal: VFC<IReceiptModalProps> = ({ modalHandler, isOpen, setIsOpen
         <UiModal
             openModal={isOpen}
             setOpenModal={() => setIsOpen(!isOpen)}
-            closeIcon={closeIcon}
-            title="Comprovante"
+            closeIcon={<Image src={closeIcon} alt="close-icon" />}
+            title="Receipt"
         >
             <StyledContentWrapper>
                 {/* First Base */}
@@ -44,67 +42,14 @@ const ReceiptModal: VFC<IReceiptModalProps> = ({ modalHandler, isOpen, setIsOpen
                 </StyledSecondBase>
                 <StyledShadow />
                 <StyledLedgerBase>
-                    <p>Pagamento realizado</p>
-                    <span>{date}</span>
+                    <p>Here it goes your text</p>
                 </StyledLedgerBase>
-
-                {/* Secont Base */}
-                <StyledDataReceiptWrapper>
-                    <StyledReceiptBase>
-                        <p>Valor Pago</p>
-                        <b>{value}</b>
-                    </StyledReceiptBase>
-                    <StyledReceiptBase>
-                        <p>Dados de pagamento</p>
-                        <p>
-                            <b>Data de vencimento: </b>
-                            <span>{date}</span>
-                        </p>
-                        <p>
-                            <b>Descrição: </b>
-                            <span>{description}</span>
-                        </p>
-                    </StyledReceiptBase>
-                    <StyledReceiptBase>
-                        <p>Dados do beneficiário</p>
-                        <p>
-                            <b>Nome: </b>
-                            <span>{name}</span>
-                        </p>
-                        <p>
-                            <b>CPF/CNPJ: </b>
-                            <span>{cnpj}</span>
-                        </p>
-                    </StyledReceiptBase>
-                    <StyledReceiptBase>
-                        <p>Dados do pagador</p>
-                        <p>
-                            <b>Nome: </b>
-                            <span>{name}s</span>
-                        </p>
-                        <p>
-                            <b>CPF/CNPJ: </b>
-                            <span>{cnpj}</span>
-                        </p>
-                    </StyledReceiptBase>
-                    <StyledReceiptBase>
-                        <p>Dados do pagador final</p>
-                        <p>
-                            <b>Nome: </b>
-                            <span>{name}</span>
-                        </p>
-                        <p>
-                            <b>CPF/CNPJ: </b>
-                            <span>{cnpj}</span>
-                        </p>
-                    </StyledReceiptBase>
-                </StyledDataReceiptWrapper>
             </StyledContentWrapper>
 
             {/* Buttons */}
             <StyledDownloadReceiptButton>
                 <StyledGradientDiv />
-                <UiButton text="Baixar comprovante" onClick={modalHandler} />
+                <UiButton text="Download receipt" onClick={modalHandler} />
             </StyledDownloadReceiptButton>
         </UiModal>
     );
